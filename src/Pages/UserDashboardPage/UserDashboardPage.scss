@@ -1,0 +1,99 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+
+.user-dashboard {
+    padding: 0 8rem;
+    &__header {
+        margin: 2rem 0;
+        color: $peach;
+    }
+    &__dashboard {
+        @include flex (space-between);
+        gap: 2rem;
+    }
+    &__app-info {
+        padding: 1rem 2rem;
+        margin: 0;
+        width: calc(60vw - 16rem);
+        background-color: $print;
+        border-radius: 20px;
+        box-shadow: $drop-shadow;
+    }
+    &__span {
+        color: $peach;
+    }
+    &__appointment {
+        @include flex (space-between, flex-start, column);
+        gap: 2rem;
+    }
+    &__appointment-details {
+        padding: 2rem 4rem;
+        background-color: $print;
+        border-radius: 20px;
+        box-shadow: $drop-shadow;
+        width: 100%;
+    }
+    &__appointment-info {
+        @include flex (space-between, center);
+    }
+    &__info {
+        width: 50%;
+    }
+    &__details-container {
+        @include flex (space-between);
+    }
+    &__artist {
+        @include flex (flex-start, flex-end, column);
+        gap: 1rem;
+    }
+    &__img-frame {
+        @include size (5.5rem, 5.5rem);
+        border-radius: 50%;
+        background-color: $coal;
+        overflow: hidden;
+    }
+    &__artist-img {
+        object-fit: cover;
+        height: 100%
+    }
+    &__actions,
+    &__action {
+        @include flex (space-between);
+        gap: 1rem;
+    }
+    &__subtitle {
+        margin-top: 0;
+    }
+    &__profile {
+        padding: 2rem 4rem;
+        background-color: $print;
+        border-radius: 20px;
+        box-shadow: $drop-shadow;
+        width: 45%;
+        @include flex (space-between, flex-start, column)
+    }
+    &__profile-img {
+        align-self: flex-end;
+    }
+    &__profile-info {
+        width: 100%;
+    }
+    &__contact {
+        padding: 1rem 4rem;
+        margin-top: 2rem;
+        background-color: $print;
+        border-radius: 20px;
+        box-shadow: $drop-shadow;
+        width: 100%;
+        @include flex (space-between, center);
+    }
+    &__contact-subtitle {
+        margin: 0;
+    }
+}
+
+.edit {
+    align-self: flex-end;
+    margin-top: 1rem;
+}

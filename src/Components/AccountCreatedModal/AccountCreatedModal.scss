@@ -20,6 +20,8 @@
             padding: 6rem;
             @include flex (center, center, column);
             text-align: center;
+            border-radius: 20px;
+            box-shadow: $drop-shadow;
         }
         &__button {
             margin-top: 1.5rem;;

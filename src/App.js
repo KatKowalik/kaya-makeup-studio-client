@@ -4,6 +4,7 @@ import "./App.scss";
 import HomePage from "./Pages/HomePage/HomePage";
 import CreateAccountPage from "./Pages/CreateAccountPage/CreateAccountPage";
 import LoginPage from "./Pages/LoginPage/LoginPage";
+import UserDashboardPage from "./Pages/UserDashboardPage/UserDashboardPage";
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
         <Route path="/" element={<HomePage />}/>
         <Route path="/signup" element={<CreateAccountPage/>}/>
         <Route path="/login" element={<LoginPage/>}/>
+        <Route path="/user_dashboard" element={<UserDashboardPage/>}/>
+        <Route path="/book_appointment" element={<UserDashboardPage/>}/>
       </Routes>
     </BrowserRouter>
   );
