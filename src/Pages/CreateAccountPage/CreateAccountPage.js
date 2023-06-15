@@ -1,7 +1,18 @@
 import "./CreateAccountPage.scss";
+import AccountCreatedModal from "../../Components/AccountCreatedModal/AccountCreatedModal";
+import { createPortal } from 'react-dom';
+import { useState } from "react";
+
 
 
 const CreateAccountPage = () => {
+    const [showModal, setShowModal] = useState(false);
+
+    const openModal = (e) => {
+        e.preventDefault();
+        setShowModal(true)
+    }
+
     return (
         <section className="create-account">
             <h1 className="create-account__title page-header">Create an account</h1>
@@ -40,11 +51,15 @@ const CreateAccountPage = () => {
                         <input name="phoneNumber" type="text" id="phoneNumber" className="form-field"/>
                     </div>
                     <div className="create-account__buttons-container">
-                        <button className="create-account__button secondary-button">Back</button>
-                        <button className="create-account__button primary-button">Confirm</button>
+                        <button className="create-account__button secondary-button label">Back</button>
+                        <button className="create-account__button primary-button label"onClick={openModal}>Confirm</button>
                     </div>  
                 </div>
             </form>
+            {showModal && createPortal(
+                <AccountCreatedModal/>,
+                document.body
+            )}
         </section>
     )
 }

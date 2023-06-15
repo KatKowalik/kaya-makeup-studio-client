@@ -25,8 +25,12 @@ const Header = () => {
                     </Link>   
                 </ul>
                 <div className="header__buttons-container">
-                    <button className="header__button primary-button label">Log in</button>
-                    <button className="header__button secondary-button label">Sign up</button>
+                    <Link to="/login">
+                        <button className="header__button primary-button label">Log in</button>
+                    </Link>
+                    <Link to="/signup">
+                        <button className="header__button secondary-button label">Sign up</button>
+                    </Link>
                 </div>
             </nav>
         </header>

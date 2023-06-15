@@ -11,7 +11,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<HomePage />}/>
-        <Route path="/create_account" element={<CreateAccountPage/>}/>
+        <Route path="/signup" element={<CreateAccountPage/>}/>
       </Routes>
     </BrowserRouter>
   );

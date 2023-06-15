@@ -1,0 +1,27 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+
+.modal {
+    position: fixed;
+        z-index: 5;
+        top: 0;
+        left: 0;
+        @include size (100%, 100%);
+        background-color: rgba(59, 55, 66, 0.9);
+        &__card {
+            position: fixed;
+            z-index: 10;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $print;
+            @include size(36.5rem, 22.25rem);
+            padding: 6rem;
+            @include flex (center, center, column);
+            text-align: center;
+        }
+        &__button {
+            margin-top: 1.5rem;;
+        }
+}

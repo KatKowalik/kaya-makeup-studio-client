@@ -3,23 +3,32 @@
 
 @font-face {
     font-family: "Raleway";
-    src: url("../../assets/fonts/Raleway-Medium.ttf") format("truetype"),
-    url("../../assets/fonts/Raleway-Medium.woff2") format("woff2");
-    font-weight: medium;
+    src: url("../../assets/fonts/Raleway-VariableFont_wght.ttf") format("trutype");
+    font-weight: 300;
+    font-style: normal;
 }
+
+// @font-face {
+//     font-family: "Raleway";
+//     src: url("../../assets/fonts/Raleway-Medium.ttf") format("truetype"),
+//     url("../../assets/fonts/Raleway-Medium.woff2") format("woff2");
+//     font-weight: 400;
+// }
 
 @font-face {
     font-family: "Raleway";
     src: url("../../assets/fonts/Raleway-SemiBold.ttf") format("truetype"),
     url("../../assets/fonts/Raleway-SemiBold.woff2") format("woff2");
-    font-weight: semi-bold;
+    font-weight: 600;
+    font-style: normal;
 }
 
 @font-face {
     font-family: "Raleway";
     src: url("../../assets/fonts/Raleway-Bold.ttf") format("truetype"),
     url("../../assets/fonts/Raleway-Bold.woff2") format("woff2");
-    font-weight: bold;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .page-header {
@@ -32,15 +41,15 @@
 }
 
 .subheader {
-        @include font (1.25rem, 700);
+        @include font (1.25rem, 600);
 }
 
 .body-large {
-    @include font (1rem, 400);
+    @include font (1rem, 300);
 }
 
 .body-small {
-    @include font (0.9rem, 400);
+    @include font (0.9rem, 300);
 }
 
 .label {
