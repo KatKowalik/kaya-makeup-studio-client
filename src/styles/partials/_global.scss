@@ -1,0 +1,32 @@
+@use "./mixins" as *;
+@use "./typography" as *;
+@use "./variables" as *;
+
+
+
+.primary-button {
+    width: 5.5rem;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient($peach, $peach-shadow);
+    color: $carbon;
+    box-shadow: 0px 4px 4px rgba(253, 130, 99, 0.15);
+    font-family: inherit;
+    &:hover {
+        background: linear-gradient($peach-shadow, $peach);
+    }
+ }
+
+.secondary-button {
+    width: 5.5rem;
+    border-radius: 20px;
+    border: 2px solid $peach;
+    background-color: transparent;
+    color: $peach;
+    box-shadow: 0px 4px 4px rgba(253, 130, 99, 0.15);
+    font-family: inherit;
+    &:hover {
+        color: $peach-shadow;
+        border: 2px solid $peach-shadow;
+    }
+}

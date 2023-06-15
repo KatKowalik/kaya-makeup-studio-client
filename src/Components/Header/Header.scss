@@ -1,0 +1,42 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+
+.header {
+    padding: 0.25rem 8rem;
+    @include flex(space-between, center);
+    &__nav {
+        @include flex(space-between);
+        gap: 2rem;
+    }
+    &__logo-container {
+        height: 2.25rem;
+    }
+    &__logo {
+        height: 2.25rem;
+        
+    }
+    &__link-container {
+        @include flex (space-between);
+        gap: 2rem;
+    }
+    &__nav-link {
+        &:link,
+        &:visited {
+            color: $white;
+            text-decoration: none;
+        }
+        &:hover {
+            color: $peach;
+        }
+    }
+    &__nav-item {
+        list-style: none;
+    }
+    &__buttons-container {
+        @include flex (space-between);
+    }
+    &__button {
+        margin: 0.5rem;
+    }
+}
