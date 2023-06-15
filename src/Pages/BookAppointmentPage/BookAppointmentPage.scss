@@ -1,0 +1,81 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.book-app {
+    padding: 1rem 8rem;
+    &__header {
+        color: $peach;
+    }
+    &__dashboard {
+        padding: 1rem 2rem;
+        @include flex (space-between, normal, column);
+        gap: 2rem;
+    }
+    &__artists {
+        background-color: $print;
+        border-radius: 20px;
+        box-shadow: $drop-shadow;
+        padding: 0.5rem 2rem;
+        @include flex (space-between, center);
+    }
+    &__avatars {
+        @include flex (space-around);
+        width: 70%;
+    }
+    &__avatar-container {
+        background-color: $coal;
+        @include size (3rem, 3rem);
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    &__avatar {
+        object-fit: cover;
+        height: 100%
+    }
+    &__pick-time {
+        @include flex (space-between);
+        gap: 2rem;
+    }
+    &__calendar {
+        background-color: $print;
+        border-radius: 20px;
+        box-shadow: $drop-shadow;
+    }
+    &__calendar-element {
+        color: $white;
+    }
+    &__times {
+        background-color: $print;
+        border-radius: 20px;
+        box-shadow: $drop-shadow;
+        @include flex (space-between, flex-start, column);
+        flex-grow: 1;
+        padding: 0.5rem 2rem;
+
+    }
+    &__available-times {
+        @include flex(space-between);
+        flex-wrap: wrap;
+        width: 100%;
+        // display: grid;
+        // grid-template-columns: repeat(6, 1fr);
+        // gap: 1.5rem;
+    }
+    &__time-slot {
+        background-color: $coal;
+        padding: 0.75rem;
+        border-radius: 8px;
+    }
+    &__button-container{
+        align-self: flex-end;
+        padding-bottom: 1rem;
+    }
+    &__button {
+        margin-left: 1rem;
+    }
+}
+
+.selected {
+    outline: 2px solid $peach;
+}
+
