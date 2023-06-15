@@ -2,6 +2,7 @@ import Header from "./Components/Header/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import HomePage from "./Pages/HomePage/HomePage";
+import CreateAccountPage from "./Pages/CreateAccountPage/CreateAccountPage";
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<HomePage />}/>
+        <Route path="/create_account" element={<CreateAccountPage/>}/>
       </Routes>
     </BrowserRouter>
   );

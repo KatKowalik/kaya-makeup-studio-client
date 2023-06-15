@@ -30,3 +30,14 @@
         border: 2px solid $peach-shadow;
     }
 }
+
+.form-field {
+    width: 24rem;
+    background-color: $coal;
+    border-radius: 20px;
+    border: none;
+    padding: 0.75rem;
+    &:focus {
+        outline: 1px solid $peach;
+    }
+}

@@ -1,4 +1,5 @@
 @use 'mixins' as *;
+@use 'variables' as *;
 
 @font-face {
     font-family: "Raleway";
@@ -23,6 +24,7 @@
 
 .page-header {
     @include font (3rem, 700); 
+    color: $peach;
 }
 
 .section-header {
