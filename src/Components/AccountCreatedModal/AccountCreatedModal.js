@@ -12,7 +12,6 @@ const AccountCreatedModal = () => {
                 <Link to="/login">
                     <button className="modal__button primary-button label">Log in</button>
                 </Link>
-                
             </div>
         </section>
     )

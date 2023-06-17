@@ -20,9 +20,6 @@
         border-radius: 20px;
         box-shadow: $drop-shadow;
     }
-    &__span {
-        color: $peach;
-    }
     &__appointment {
         @include flex (space-between, flex-start, column);
         gap: 2rem;

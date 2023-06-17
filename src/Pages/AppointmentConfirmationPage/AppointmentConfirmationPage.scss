@@ -1,0 +1,46 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+
+.confirmation {
+    padding: 2rem 8rem;
+    position: relative;
+    height: calc(100vh - 58px);
+    &__appointment,
+    &__credentials {
+        background-color: $print;
+        border-radius: 20px;
+        box-shadow: $drop-shadow;
+        padding: 0.5rem 2rem;
+        width: 50%;
+        margin-bottom: 2rem;
+    }
+    &__appointment {
+        text-align: center;
+    }
+    &__back-arrow {
+        padding: 1rem 0;
+    }
+    &__wrapper {
+        @include flex (space-between);
+        width: 100%;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    &__login {
+        border-left: 2px solid $coal;
+    }
+    &__text {
+        padding: 0 2rem;
+    }
+    &__button {
+        margin: 1rem 0;
+    }
+    &__img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        width: 55%;
+    }
+}

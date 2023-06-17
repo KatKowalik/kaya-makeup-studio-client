@@ -52,7 +52,7 @@ const CreateAccountPage = () => {
                     </div>
                     <div className="create-account__buttons-container">
                         <button className="create-account__button secondary-button label">Back</button>
-                        <button className="create-account__button primary-button label"onClick={openModal}>Confirm</button>
+                        <button className="create-account__button primary-button label" onClick={openModal}>Confirm</button>
                     </div>  
                 </div>
             </form>

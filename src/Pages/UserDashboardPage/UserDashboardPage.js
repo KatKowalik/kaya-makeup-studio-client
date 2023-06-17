@@ -17,7 +17,7 @@ const UserDashboardPage = () => {
                 <div className="user-dashboard__appointment">
                     <div className="user-dashboard__pop-up">
                         <p className="user-dashboard__app-info subheader">
-                            You have an upcoming appointment with<span className="user-dashboard__span subheader"> Kaya.</span>
+                            You have an upcoming appointment with<span className="span subheader"> Kaya.</span>
                         </p>
                     </div>
                     <div className="user-dashboard__appointment-details">

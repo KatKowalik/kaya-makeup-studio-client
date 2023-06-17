@@ -11,26 +11,26 @@ const Header = () => {
             </Link>
             <nav className="header__nav">
                 <ul className="header__link-container">
-                    <NavLink to="#" className="header__nav-link">
+                    <NavLink to="/" className="header__nav-link">
                         <li className="header__nav-item body-large">About</li>
                     </NavLink>
                     <NavLink to="#" className="header__nav-link">
                         <li className="header__nav-item body-large">Our Team</li>
                     </NavLink>
-                    <Link to="#" className="header__nav-link">
+                    <NavLink to="#" className="header__nav-link">
                         <li className="header__nav-item body-large">Services</li>
-                    </Link>
-                    <Link to="#" className="header__nav-link">
+                    </NavLink>
+                    <NavLink to="#" className="header__nav-link">
                         <li className="header__nav-item body-large">Portfolio</li>
-                    </Link>   
+                    </NavLink>   
                 </ul>
                 <div className="header__buttons-container">
-                    <Link to="/login">
+                    <NavLink to="/login">
                         <button className="header__button primary-button label">Log in</button>
-                    </Link>
-                    <Link to="/signup">
+                    </NavLink>
+                    <NavLink to="/signup">
                         <button className="header__button secondary-button label">Sign up</button>
-                    </Link>
+                    </NavLink>
                 </div>
             </nav>
         </header>

@@ -1,5 +1,6 @@
 import "./HomePage.scss";
 import heroImg from "../../assets/images/hero-image.png";
+import { Link } from "react-router-dom";
 
 
 const HomePage = () => {
@@ -11,7 +12,9 @@ const HomePage = () => {
                 No matter what your beauty needs are, we have the perfect makeup artist for you!
                 Our team is made up of talented artists who all have the same goal in mind, and that is making you feel your best no matter what the occasion. </p>
                 <p className="homepage__subtitle subheader">Book your appointment now!</p>
-                <button className="homepage__button primary-button label">Book now</button>
+                <Link to="/book_appointment">
+                    <button className="homepage__button primary-button label">Book now</button>
+                </Link>
             </article>
             <img 
                 src={heroImg} 

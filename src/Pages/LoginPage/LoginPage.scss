@@ -15,16 +15,31 @@
     }
     &__card {
         background-color: $print;
-        @include size(30rem, 29.5rem);
         box-shadow: $drop-shadow;
         @include flex (flex-start, center, column);
-        gap: 0.5rem;
-        padding: 4rem 2rem;
+        gap: 1rem;
+        padding: 3rem 2rem;
         border-radius: 20px;
+    }
+    &__title-container {
+        text-align: center;
+    }
+    &__title {
+        margin: 0.5rem;
+    }
+    &__link {
+        text-decoration: none;
+        &:visited {
+            color: $peach;
+        }
+    }
+    &__text {
+        margin: 0.25rem;
     }
     &__form {
         @include flex (space-around, flex-start, column);
         gap: 1rem;
+        margin: 1rem 0;
     }
     &__field-container {
         @include flex (flex-start, flex-start, column);
@@ -37,13 +52,15 @@
         @include flex (space-between);
         gap: 1rem;
         align-self: flex-end;
-        padding-right: 0.75rem;
-        margin: 1rem;
     }
     &__button-link {
         align-self: flex-end;
     }
     &__logo {
-        width: 8rem;
+        width: 6rem;
+    }
+    &__forgot-password {
+        @include font (.75rem, 300);
+        padding-left: 0.75rem;
     }
 }
