@@ -16,7 +16,6 @@ const Calendar = () => {
             <ThemeProvider theme={darkTheme}>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DateCalendar disablePast="true" sx={{
-                        width: 400,
                         '& .css-nk89i7-MuiPickersCalendarHeader-root': {
                             color: '#FD8263',
                         },

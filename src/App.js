@@ -7,6 +7,7 @@ import LoginPage from "./Pages/LoginPage/LoginPage";
 import UserDashboardPage from "./Pages/UserDashboardPage/UserDashboardPage";
 import BookAppointmentPage from "./Pages/BookAppointmentPage/BookAppointmentPage";
 import AppointmentConfirmationPage from "./Pages/AppointmentConfirmationPage/AppointmentConfirmationPage";
+import ArtistDashboardPage from "./Pages/ArtistDashboardPage/ArtistDashboardPage";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/user_dashboard" element={<UserDashboardPage/>}/>
           <Route path="/book_appointment" element={<BookAppointmentPage/>}/>
           <Route path="/app_confirmation" element={<AppointmentConfirmationPage/>}/>
+          <Route path="/artist_dashboard" element={<ArtistDashboardPage/>}/>
         </Routes>
       </BrowserRouter>
   );

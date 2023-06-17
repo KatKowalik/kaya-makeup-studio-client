@@ -21,6 +21,12 @@
     height: $height;
 }
 
+@mixin card {
+    background-color: $print;
+    box-shadow: $drop-shadow;
+    border-radius: 20px;
+}
+
 //Mixins responsive design//
 
 @mixin tablet {
