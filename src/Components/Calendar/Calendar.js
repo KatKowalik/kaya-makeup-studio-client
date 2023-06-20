@@ -2,6 +2,7 @@ import { DateCalendar } from "@mui/x-date-pickers";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { ThemeProvider, createTheme } from "@mui/material";
+import { useState } from "react";
 
 
 const darkTheme = createTheme({
@@ -11,11 +12,18 @@ const darkTheme = createTheme({
   });
 
 const Calendar = () => {
+    const [pickedDate, setPickedDate] = useState([]);
+
+    const getPickedDate = (e) => {
+        const newValue = e.$d;
+        setPickedDate(newValue);
+    }
+
     return (
         <div className="calendar">
             <ThemeProvider theme={darkTheme}>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DateCalendar disablePast="true" sx={{
+                    <DateCalendar disablePast={true} sx={{
                         '& .css-nk89i7-MuiPickersCalendarHeader-root': {
                             color: '#FD8263',
                         },
@@ -33,7 +41,7 @@ const Calendar = () => {
                                 }
                             },
                           },
-                    }}/>
+                    }} onChange={getPickedDate}/>
                 </LocalizationProvider>
             </ThemeProvider>
         </div>

@@ -41,6 +41,8 @@
     border-radius: 20px;
     border: none;
     padding: 0.75rem;
+    color: inherit;
+    font-family: inherit;
     &:focus {
         outline: 1px solid $peach;
     }
@@ -49,3 +51,14 @@
 .span {
     color: $peach;
 }
+
+.error-span {
+    @include font (.625rem, 300);
+    color: rgb(227, 74, 74);
+    padding-left: 0.75rem;
+    display: none;
+}
+
+// input:invalid[focused="true"] ~ span {
+//     display: block;
+// }
