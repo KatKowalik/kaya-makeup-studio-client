@@ -16,7 +16,7 @@ const UserDashboardPage = () => {
     const { id } = useParams();
     const [displayedUser, setDisplayedUser] = useState([]);
     const [bookedAppointments, setBookedAppointments] = useState([]);
-   
+    
     useEffect(() => {
         const getActiveUser = async () => {
             try {
@@ -42,7 +42,8 @@ const UserDashboardPage = () => {
         };
         getAppointments();
     }, [])
-   
+
+    
     return (
         <section className="user-dashboard">
             <h2 className="user-dashboard__header section-header">{`Welcome back, ${displayedUser.first_name}!`}</h2>

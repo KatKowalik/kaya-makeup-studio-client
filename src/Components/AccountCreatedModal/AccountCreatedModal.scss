@@ -15,15 +15,17 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: $print;
             @include size(36.5rem, 22.25rem);
             padding: 6rem;
-            @include flex (center, center, column);
+            @include flex (space-between, center, column);
             text-align: center;
-            border-radius: 20px;
-            box-shadow: $drop-shadow;
+            @include card;
         }
         &__button {
-            margin-top: 1.5rem;;
+            margin-top: 1.5rem;
+        }
+        &__button-container {
+            @include flex (space-between);
+            gap: 2rem;
         }
 }
