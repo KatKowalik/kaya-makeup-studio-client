@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/icons/logo-white-color.svg";
 
 
-const Header = () => {
+const Header = ({activeUser, isLogged, handleLogOut}) => {
     return (
         <header className="header">
             <Link to="/" className="header__logo-link">
@@ -24,14 +24,27 @@ const Header = () => {
                         <li className="header__nav-item body-large">Portfolio</li>
                     </NavLink>   
                 </ul>
-                <div className="header__buttons-container">
-                    <NavLink to="/login">
-                        <button className="header__button primary-button label">Log in</button>
-                    </NavLink>
-                    <NavLink to="/signup">
-                        <button className="header__button secondary-button label">Sign up</button>
-                    </NavLink>
-                </div>
+                
+                {
+                    (!isLogged) ? 
+                    <div className="header__buttons-container">
+                        <NavLink to="/login">
+                            <button className="header__button primary-button label">Log in</button>
+                        </NavLink>
+                        <NavLink to="/signup">
+                            <button className="header__button secondary-button label">Sign up</button>
+                        </NavLink>
+                    </div>
+                    :
+                    <div className="header__buttons-container">
+                        <NavLink to="#">
+                            <button className="header__button primary-button label" onClick={handleLogOut}>Log out</button>
+                        </NavLink>
+                        <NavLink to={`/user_dashboard/${activeUser.id}`}>
+                            <button className="header__button secondary-button label">My Profile</button>
+                        </NavLink>
+                    </div>
+                }     
             </nav>
         </header>
     )

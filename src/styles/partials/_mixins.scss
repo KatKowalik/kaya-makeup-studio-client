@@ -22,9 +22,9 @@
 }
 
 @mixin card {
-    background-color: $print;
+    background: linear-gradient(156.68deg, #5B5764 13%, $print 40.84%);
     box-shadow: $drop-shadow;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 //Mixins responsive design//

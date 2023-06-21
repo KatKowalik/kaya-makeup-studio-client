@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/icons/logo-white-color.svg";
 
 
-const LoginCard = () => {
+const LoginCard = ({ handleSubmit, handleChange, loggedUser }) => {
+  
     return (
         <div className="login__card">
             <img src={logo} alt="logo" className="login__logo"/>
@@ -15,14 +16,28 @@ const LoginCard = () => {
                     </Link>
                 </p>
             </div>
-            <form className="login__form">
+            <form className="login__form" onSubmit={handleSubmit}>
                 <div className="login__field-container">
                     <label htmlFor="email" className="login__label label">E-mail</label>
-                    <input name="email" type="text" id="email" className="form-field"/>
+                    <input 
+                        name="email" 
+                        type="text" 
+                        id="email" 
+                        className="form-field"
+                        value={loggedUser.email}
+                        onChange={handleChange}
+                    />
                 </div>
                 <div className="login__field-container">
                     <label htmlFor="password" className="create-account__label label">Password</label>
-                    <input name="password" type="password" id="password" className="form-field"/>
+                    <input 
+                        name="password" 
+                        type="password" 
+                        id="password" 
+                        className="form-field"
+                        value={loggedUser.password}
+                        onChange={handleChange}
+                    />
                     <p className="login__forgot-password body-small">Forgot password?</p>
                 </div>
                 
@@ -30,9 +45,7 @@ const LoginCard = () => {
                     <Link to="/" className="login__button-link">
                         <button className="login__button secondary-button label">Back</button>
                     </Link>
-                    <Link to="#" className="login__button-link">
                         <button className="login__button primary-button label">Log in</button>
-                    </Link>
                 </div>
             </form>
         </div>
