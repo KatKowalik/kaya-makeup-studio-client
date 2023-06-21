@@ -7,7 +7,7 @@ import { createPortal } from "react-dom";
 import AppConfirmationModal from "../../Components/AppConfirmationModal/AppConfirmationModal";
 
 
-const BookAppointmentPage = () => {
+const BookAppointmentPage = ({ artists }) => {
     const [showModal, setShowModal] = useState(false);
 
     const openModal = (e) => {
@@ -23,29 +23,35 @@ const BookAppointmentPage = () => {
             <div className="book-app__artists">
                 <p className="book-app__subtitle subheader">Choose your artist:</p>
                 <div className="book-app__avatars">
-                    <div className="book-app__outline selected">
-                        <div className="book-app__avatar-container">
-                            <img src={kaya} alt="kaya" className="book-app__avatar"/>
+                { artists.map(artist => {
+                    return (
+                        <div className="book-app__outline" key={artist.artist_id}>
+                            <div className="book-app__avatar-container" value={artist.artist_id}>
+                                <img src={artist.avatar} alt={artist.first_name} className="book-app__avatar"/>
+                            </div>
                         </div>
-                    </div>
-                    <div className="book-app__avatar-container"></div>
-                    <div className="book-app__avatar-container"></div>
-                    <div className="book-app__avatar-container"></div>
-                    <div className="book-app__avatar-container"></div>
+                )})
+                }
                 </div>
             </div>
-            <div className="book-app__pick-time">
+            <form className="book-app__pick-time">
                 <div className="book-app__calendar">
                     <Calendar />
                 </div>
                 <div className="book-app__times">
                     <div className="book-app__available-times">
-                        <button className="book-app__time-slot body-large">09:00AM</button>
-                        <button className="book-app__time-slot body-large">10:00AM</button>
-                        <button className="book-app__time-slot body-large not-available" disabled>11:00AM</button>
-                        <button className="book-app__time-slot body-large">12:00PM</button>
-                        <button className="book-app__time-slot body-large">01:00PM</button>
-                        <button className="book-app__time-slot body-large">02:00PM</button>
+                        <button className="book-app__time-slot body-large" value="09:00:00">09:00AM</button>
+                        <button className="book-app__time-slot body-large" value="10:00:00">10:00AM</button>
+                        <button className="book-app__time-slot body-large" value="11:00:00">11:00AM</button>
+                        <button className="book-app__time-slot body-large" value="12:00:00">12:00PM</button>
+                        <button className="book-app__time-slot body-large" value="13:00:00">01:00PM</button>
+                        <button className="book-app__time-slot body-large" value="14:00:00">02:00PM</button>
+                        <button className="book-app__time-slot body-large" value="15:00:00">03:00AM</button>
+                        <button className="book-app__time-slot body-large" value="16:00:00">04:00AM</button>
+                        <button className="book-app__time-slot body-large" value="17:00:00">05:00AM</button>
+                        <button className="book-app__time-slot body-large" value="18:00:00">06:00PM</button>
+                        <button className="book-app__time-slot body-large" value="19:00:00">07:00PM</button>
+                        <button className="book-app__time-slot body-large" value="20:00:00">08:00PM</button>
                     </div>
                     <div className="book-app__button-container">
                         <Link to="/">
@@ -56,7 +62,7 @@ const BookAppointmentPage = () => {
                         </Link>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
         {showModal && createPortal(
             <AppConfirmationModal setOpenModal={setShowModal}/>,

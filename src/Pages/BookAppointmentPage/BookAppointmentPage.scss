@@ -12,9 +12,7 @@
         gap: 2rem;
     }
     &__artists {
-        background-color: $print;
-        border-radius: 20px;
-        box-shadow: $drop-shadow;
+        @include card;
         padding: 0.5rem 2rem;
         @include flex (space-between, center);
     }
@@ -32,28 +30,23 @@
         @include size (3rem, 3rem);
         border-radius: 50%;
         overflow: hidden;
-       
     }
     &__avatar {
         object-fit: cover;
-        height: 100%
+        width: 100%
     }
     &__pick-time {
         @include flex (space-between);
         gap: 2rem;
     }
     &__calendar {
-        background-color: $print;
-        border-radius: 20px;
-        box-shadow: $drop-shadow;
+        @include card;
     }
     &__calendar-element {
         color: $white;
     }
     &__times {
-        background-color: $print;
-        border-radius: 20px;
-        box-shadow: $drop-shadow;
+        @include card;
         @include flex (space-between, flex-start, column);
         flex-grow: 1;
         padding: 0.5rem 2rem;
@@ -65,7 +58,7 @@
         width: 100%;
         padding-top: 1rem;
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         gap: 1rem;
     }
     &__time-slot {

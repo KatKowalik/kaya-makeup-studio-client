@@ -8,7 +8,7 @@ import UserDashboardPage from "./Pages/UserDashboardPage/UserDashboardPage";
 import BookAppointmentPage from "./Pages/BookAppointmentPage/BookAppointmentPage";
 import AppointmentConfirmationPage from "./Pages/AppointmentConfirmationPage/AppointmentConfirmationPage";
 import ArtistDashboardPage from "./Pages/ArtistDashboardPage/ArtistDashboardPage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
@@ -19,8 +19,9 @@ function App() {
     email: "",
     password: ""
   });
-  const [activeUser, setActiveUser] = useState([])
+  const [activeUser, setActiveUser] = useState([]);
   const [isLogged, setIsLogged] = useState(false);
+  const [artistsArray, setArtistsArray] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -54,6 +55,18 @@ function App() {
     navigate("/");
   }
 
+  useEffect(() => {
+    const getArtists = async () => {
+      try{
+        const artistsData = await axios.get("http://localhost:8080/artists")
+        setArtistsArray(artistsData.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getArtists();
+  }, [])
+
   return (
       <div>
         <Header 
@@ -68,7 +81,7 @@ function App() {
               handleChange={handleChange}
               loggedUser={loggedUser} />}/>
           <Route path="/user_dashboard/:id" element={<UserDashboardPage activeUser={activeUser}/>}/>
-          <Route path="/book_appointment" element={<BookAppointmentPage/>}/>
+          <Route path="/book_appointment" element={<BookAppointmentPage artists={artistsArray}/>}/>
           <Route path="/app_confirmation" element={<AppointmentConfirmationPage/>}/>
           <Route path="/artist_dashboard" element={<ArtistDashboardPage/>}/>
         </Routes>
