@@ -11,13 +11,8 @@ const darkTheme = createTheme({
     },
   });
 
-const Calendar = () => {
-    const [pickedDate, setPickedDate] = useState([]);
-
-    const getPickedDate = (e) => {
-        const newValue = e.$d;
-        setPickedDate(newValue);
-    }
+const Calendar = ({ handleChangeDate }) => {
+  
 
     return (
         <div className="calendar">
@@ -41,7 +36,7 @@ const Calendar = () => {
                                 }
                             },
                           },
-                    }} onChange={getPickedDate}/>
+                    }} onChange={handleChangeDate}/>
                 </LocalizationProvider>
             </ThemeProvider>
         </div>

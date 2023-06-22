@@ -24,6 +24,14 @@
         @include size(3.5rem, 3.5rem);
         border-radius: 50%;
         padding: 0.25rem;
+        position: relative;
+        z-index: 10;
+        border: none;
+        background-color: transparent;
+        &:hover,
+        &:focus {
+            outline: 2px solid $peach;
+        }
     }
     &__avatar-container {
         background-color: $coal;
@@ -80,10 +88,6 @@
     &__button {
         margin-left: 1rem;
     }
-}
-
-.selected {
-    outline: 2px solid $peach;
 }
 
 .not-available {

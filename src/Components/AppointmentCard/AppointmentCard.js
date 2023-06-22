@@ -6,12 +6,13 @@ import { createPortal } from 'react-dom';
 import CancelAppointmentModal from "../CancelAppointmentModal/CancelAppointmentModal";
 
 
+
 const AppointmentCard = ({ bookedAppointments }) => {
     const [showModal, setShowModal] = useState(false);
     const [appToBeDel, setAppToBeDel] = useState([]);
    
 
-    const dateFormat = {
+   const dateFormat = {
         year: "numeric",
         month: "2-digit",
         day: "2-digit",
@@ -65,5 +66,6 @@ const AppointmentCard = ({ bookedAppointments }) => {
         </div>   
     )
 }
+
 
 export default AppointmentCard;
