@@ -81,7 +81,9 @@ function App() {
               handleChange={handleChange}
               loggedUser={loggedUser} />}/>
           <Route path="/user_dashboard/:id" element={<UserDashboardPage activeUser={activeUser}/>}/>
-          <Route path="/book_appointment" element={<BookAppointmentPage artists={artistsArray}/>}/>
+          <Route path="/book_appointment" element={<BookAppointmentPage 
+              artists={artistsArray}
+              activeUser={activeUser}/>}/>
           <Route path="/app_confirmation" element={<AppointmentConfirmationPage/>}/>
           <Route path="/artist_dashboard" element={<ArtistDashboardPage/>}/>
         </Routes>
