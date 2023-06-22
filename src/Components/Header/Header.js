@@ -14,13 +14,13 @@ const Header = ({activeUser, isLogged, handleLogOut}) => {
                     <NavLink to="/" className="header__nav-link">
                         <li className="header__nav-item body-large">About</li>
                     </NavLink>
-                    <NavLink to="#" className="header__nav-link">
+                    <NavLink to="/our_team" className="header__nav-link">
                         <li className="header__nav-item body-large">Our Team</li>
                     </NavLink>
-                    <NavLink to="#" className="header__nav-link">
+                    <NavLink to="/services" className="header__nav-link">
                         <li className="header__nav-item body-large">Services</li>
                     </NavLink>
-                    <NavLink to="#" className="header__nav-link">
+                    <NavLink to="/portfolio" className="header__nav-link">
                         <li className="header__nav-item body-large">Portfolio</li>
                     </NavLink>   
                 </ul>

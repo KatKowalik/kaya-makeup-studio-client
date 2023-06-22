@@ -14,6 +14,7 @@ const BookAppointmentPage = ({ artists, activeUser }) => {
     const [selectedDate, setSelectedDate] = useState([]);
     const [selectedTime, setSelectedTime] = useState([]);
     const [formattedDate, setFormattedDate] = useState([]);
+    const [errorMessage, setErrorMessage] = useState([]);
     
     
     const newAppointment = {
@@ -23,13 +24,21 @@ const BookAppointmentPage = ({ artists, activeUser }) => {
         artist_id: +selectedArtist,
     }
 
+    console.log(activeUser, newAppointment);
+
+
     const openModal = (e) => {
         setShowModal(true)
     }
 
     const handleSelectArtist = (e) => {
         e.preventDefault();
+        const avatarOutline = document.querySelectorAll(".book-app__outline");
+        avatarOutline.forEach(outline => {
+            outline.classList.remove("selected");
+        })
         setSelectedArtist(e.target.getAttribute("value"))
+        e.target.parentElement.parentElement.classList.add("selected")
     }
 
     useEffect(() => {
@@ -53,22 +62,28 @@ const BookAppointmentPage = ({ artists, activeUser }) => {
 
     const handleSelectedTime = (e) => {
         e.preventDefault();
+        const timeSlotDiv = document.querySelectorAll(".book-app__time-slot");
+        timeSlotDiv.forEach(time => {
+            time.classList.remove("selected");
+        })
         setSelectedTime(e.target.value);
+        e.target.classList.add("selected");
     }
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-
-        // if(!selectedDate || !selectedTime || !activeUser || !selectedArtist) return;
+        const errorDiv = document.querySelector(".book-app__error-div");
+        errorDiv.classList.add("hidden")
         axios
         .post("http://localhost:8080/appointments", newAppointment)
         .then((response) => {
-            console.log(response)
-            console.log("New appointment added")
             openModal();
         })
         .catch(error => {
-            console.log(error)
+            setErrorMessage(error.response.data.message);
+            if(error) {
+                errorDiv.classList.remove("hidden")
+            }
         })
 }
     const dateFormat = {
@@ -79,7 +94,7 @@ const BookAppointmentPage = ({ artists, activeUser }) => {
    
     const bookedTimeSlots = []
     appointments.map(appointment => {
-        if((new Date(appointment.date).toLocaleDateString("en-US", dateFormat)) == (new Date(selectedDate).toLocaleDateString("en-US", dateFormat)))
+        if((new Date(appointment.date).toLocaleDateString("en-US", dateFormat)) === (new Date(selectedDate).toLocaleDateString("en-US", dateFormat)))
         bookedTimeSlots.push(appointment)
         return bookedTimeSlots;
     })
@@ -150,6 +165,9 @@ const BookAppointmentPage = ({ artists, activeUser }) => {
     return (
         <section className="book-app">
         <h2 className="book-app__header section-header">Book appointment</h2>
+        <div className="book-app__error-div hidden">
+            <p className="book-app__error-msg">{errorMessage}</p>
+        </div>
         <form className="book-app__dashboard">
             <div className="book-app__artists">
                 <p className="book-app__subtitle subheader">Choose your artist:</p>
@@ -170,8 +188,7 @@ const BookAppointmentPage = ({ artists, activeUser }) => {
                                 />
                             </div>
                         </button>
-                    )})
-                }
+                    )})}
                 </div>
             </div>
             <div className="book-app__pick-time">
@@ -183,7 +200,7 @@ const BookAppointmentPage = ({ artists, activeUser }) => {
                     { timeSlots.map(time => {
                         return ( (bookedTimeSlots.find(appointment => {
                             return(
-                            appointment.time == time.value
+                            appointment.time === time.value
                         )})?
                             <button 
                                 className="book-app__time-slot body-large not-available" 
@@ -199,10 +216,7 @@ const BookAppointmentPage = ({ artists, activeUser }) => {
                                 key={time.id}>
                                     {time.display}
                             </button>
-                        )
-                            
-                     )})
-                    }
+                        ))})}
                     </div>
                     <div className="book-app__button-container">
                         <Link to="/">

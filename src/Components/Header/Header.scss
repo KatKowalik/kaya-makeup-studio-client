@@ -3,7 +3,7 @@
 
 
 .header {
-    padding: 0.25rem 8rem;
+    padding: 0.5rem 8rem;
     @include flex(space-between, center);
     &__nav {
         @include flex(space-between);

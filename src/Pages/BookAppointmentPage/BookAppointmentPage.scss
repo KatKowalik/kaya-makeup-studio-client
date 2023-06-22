@@ -25,11 +25,10 @@
         border-radius: 50%;
         padding: 0.25rem;
         position: relative;
-        z-index: 10;
+        z-index: 5;
         border: none;
         background-color: transparent;
-        &:hover,
-        &:focus {
+        &:hover{
             outline: 2px solid $peach;
         }
     }
@@ -76,7 +75,7 @@
         border: none;
         color: $white;
         cursor: pointer;
-        &:focus {
+        &:hover {
             outline: 2px solid $peach;
             color: $peach;
         }
@@ -88,6 +87,18 @@
     &__button {
         margin-left: 1rem;
     }
+    &__error-div {
+        width: 100%;
+        padding: 0.5rem 1rem;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: $error;
+        text-align: center;
+    }
+}
+
+.selected {
+    outline: 2px solid $peach;
+    color: $peach;
 }
 
 .not-available {

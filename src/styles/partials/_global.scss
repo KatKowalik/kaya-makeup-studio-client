@@ -48,6 +48,11 @@
     }
 }
 
+.active:link,
+.active:visited {
+    color: $peach;
+}
+
 .hidden {
     display: none;
 }
@@ -62,7 +67,3 @@
     padding-left: 0.75rem;
     display: none;
 }
-
-// input:invalid[focused="true"] ~ span {
-//     display: block;
-// }
