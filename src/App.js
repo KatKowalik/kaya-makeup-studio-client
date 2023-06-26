@@ -8,9 +8,13 @@ import UserDashboardPage from "./Pages/UserDashboardPage/UserDashboardPage";
 import BookAppointmentPage from "./Pages/BookAppointmentPage/BookAppointmentPage";
 import AppointmentConfirmationPage from "./Pages/AppointmentConfirmationPage/AppointmentConfirmationPage";
 import ArtistDashboardPage from "./Pages/ArtistDashboardPage/ArtistDashboardPage";
+import ServicesPage from "./Pages/ServicesPage/ServicesPage";
+import OurTeamPage from "./Pages/OurTeamPage/OurTeamPage";
+import SingleArtistPage from "./Pages/SingleArtistPage/SingleArtistPage";
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
+import PortfolioPage from "./Pages/PortfolioPage/PortfolioPage";
 
 
 function App() {
@@ -22,9 +26,12 @@ function App() {
   const [activeUser, setActiveUser] = useState([]);
   const [isLogged, setIsLogged] = useState(false);
   const [artistsArray, setArtistsArray] = useState([]);
+  const [errorMessage, setErrorMessage] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const errorDiv = document.querySelector(".login__error");
+        errorDiv.classList.add("hidden")
     axios
     .post("http://localhost:8080/users/login", loggedUser)
     .then((res) => {
@@ -40,6 +47,10 @@ function App() {
         setIsLogged(true);
         navigate(`/user_dashboard/${user.id}`)
       })
+    })
+    .catch (error => {
+      setErrorMessage(error.response.data);
+      errorDiv.classList.remove("hidden")
     })
   }  
 
@@ -79,13 +90,18 @@ function App() {
           <Route path="/login" element={<LoginPage 
               handleSubmit={handleSubmit} 
               handleChange={handleChange}
-              loggedUser={loggedUser} />}/>
+              loggedUser={loggedUser}
+              errorMessage={errorMessage} />}/>
           <Route path="/user_dashboard/:id" element={<UserDashboardPage activeUser={activeUser}/>}/>
           <Route path="/book_appointment" element={<BookAppointmentPage 
               artists={artistsArray}
               activeUser={activeUser}/>}/>
           <Route path="/app_confirmation" element={<AppointmentConfirmationPage/>}/>
           <Route path="/artist_dashboard" element={<ArtistDashboardPage/>}/>
+          <Route path="/services" element={<ServicesPage />}/>
+          <Route path="/our_team" element={<OurTeamPage artists={artistsArray}/>}/>
+          <Route path="/our_team/:id" element={<SingleArtistPage artists={artistsArray}/>}/>
+          <Route path="/portfolio" element={<PortfolioPage/>}/>
         </Routes>
       </div>
   );

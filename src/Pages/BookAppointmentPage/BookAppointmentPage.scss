@@ -103,4 +103,8 @@
 
 .not-available {
     color: gray;
+    &:hover {
+        outline: none;
+        color: gray;
+    }
 }

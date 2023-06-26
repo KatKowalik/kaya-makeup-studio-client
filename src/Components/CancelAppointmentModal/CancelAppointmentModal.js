@@ -14,7 +14,7 @@ const CancelAppointmentModal = ({appToBeDel, closeModal}) => {
                 console.error(error);
             });
         closeModal();
-        window.location.reload();
+        // window.location.reload();
     }
 
    

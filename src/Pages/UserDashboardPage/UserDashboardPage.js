@@ -41,7 +41,7 @@ const UserDashboardPage = () => {
             }
         };
         getAppointments();
-    }, [])
+    }, [bookedAppointments])
 
     
     return (

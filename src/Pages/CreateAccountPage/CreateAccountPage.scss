@@ -2,40 +2,60 @@
 @use "../../styles/partials/variables" as *;
 
 .create-account {
-    padding: 0 8rem;
+    padding: 1rem 8rem;
+    position: relative;
+    height: 100%;
     &__form {
-        @include flex (space-around);
+        @include card;
+        @include flex (center, center, column);
+        width: 60%;
+        height: 100%;
     }
-    &__credentials,
-    &__personal-info {
-        background-color: $print;
-        @include size(30rem, 29.5rem);
-        box-shadow: $drop-shadow;
-        @include flex (flex-start, center, column);
+    &__title {
+        margin: 0;
+        padding: 2rem 10rem;
+        align-self: flex-start;
+        font-size: 2rem;
+    }
+    &__credentials {
+        @include flex (center, center, column);
         gap: 1rem;
         padding: 1.5rem;
-        border-radius: 20px;
     }
-    &__subtitle {
-        align-self: flex-start;
-        padding-left: 1.75rem;
+    &__name-holder {
+        @include flex(flex-start);
+        gap: 2.6rem;
+        width: 100%;
+    }
+    &__name {
+        width: 110%;
     }
     &__field-container {
         @include flex (flex-start, flex-start, column);
-        gap: 0.5rem;
-    }
-    &__label {
-        padding-left: 0.75rem;
+        gap: 1rem;
     }
     &__buttons-container {
         @include flex (space-between);
         gap: 1rem;
         align-self: flex-end;
-        padding-right: 0.75rem;
-        margin: 1rem;
+        margin-top: 1rem;
     }
     &__button {
         padding: 0.5rem;
     }
-
+    &__login-span {
+        align-self: flex-end;
+        margin: 0;
+        &:link,
+        &:visited {
+            text-decoration: none;
+            color: $white;
+        }
+    }
+    &__image {
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        right: 0;
+    }
 }

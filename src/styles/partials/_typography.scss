@@ -3,17 +3,11 @@
 
 @font-face {
     font-family: "Raleway";
-    src: url("../../assets/fonts/Raleway-VariableFont_wght.ttf") format("trutype");
+    src: url("../../assets/fonts/Raleway-Regular.ttf") format("trutype"),
+    url("../../assets/fonts/Raleway-Regular.woff2") format("truetype");
     font-weight: 300;
     font-style: normal;
 }
-
-// @font-face {
-//     font-family: "Raleway";
-//     src: url("../../assets/fonts/Raleway-Medium.ttf") format("truetype"),
-//     url("../../assets/fonts/Raleway-Medium.woff2") format("woff2");
-//     font-weight: 400;
-// }
 
 @font-face {
     font-family: "Raleway";
@@ -42,6 +36,10 @@
 
 .subheader {
         @include font (1.25rem, 600);
+}
+
+.nav-links {
+    @include font (1rem, 600);
 }
 
 .body-large {

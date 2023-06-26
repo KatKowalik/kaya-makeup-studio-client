@@ -1,0 +1,38 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.single-artist {
+    padding: 4rem 8rem;
+    @include flex(flex-start, center);
+    gap: 4rem;
+    &__image-container {
+        border-radius: 5px;
+        box-shadow: $drop-shadow;
+        overflow: hidden;
+    }
+    &__image {
+        object-fit: cover;
+        width: 100%;
+        margin: 0;
+        display: block;
+    }
+    &__bio {
+        width: 37.5rem;
+        @include flex (flex-start, flex-start, column)
+    }
+    &__title {
+        margin: 1rem 0;
+        color: $white;
+    }
+    &__subtitle {
+        color: $peach;
+        font-weight: 600;
+    }
+    &__button-container {
+        align-self: flex-end;
+        @include flex(space-between);
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+}

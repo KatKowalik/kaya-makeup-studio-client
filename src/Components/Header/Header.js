@@ -12,16 +12,16 @@ const Header = ({activeUser, isLogged, handleLogOut}) => {
             <nav className="header__nav">
                 <ul className="header__link-container">
                     <NavLink to="/" className="header__nav-link">
-                        <li className="header__nav-item body-large">About</li>
+                        <li className="header__nav-item nav-links">About</li>
                     </NavLink>
                     <NavLink to="/our_team" className="header__nav-link">
-                        <li className="header__nav-item body-large">Our Team</li>
+                        <li className="header__nav-item nav-links">Our Team</li>
                     </NavLink>
                     <NavLink to="/services" className="header__nav-link">
-                        <li className="header__nav-item body-large">Services</li>
+                        <li className="header__nav-item nav-links">Services</li>
                     </NavLink>
                     <NavLink to="/portfolio" className="header__nav-link">
-                        <li className="header__nav-item body-large">Portfolio</li>
+                        <li className="header__nav-item nav-links">Portfolio</li>
                     </NavLink>   
                 </ul>
                 

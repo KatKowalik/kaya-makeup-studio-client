@@ -1,0 +1,35 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+
+.services {
+    padding: 0 14rem;
+    &__cards {
+       @include flex (center, center, column);
+    }
+    &__card {
+        @include card;
+        @include flex(space between, center);
+        margin: 2rem 0;
+        &:nth-child(even) {
+            @include flex(space-between, center, row-reverse);
+        } 
+    }
+    &__copy {
+        padding: 3rem;
+    }
+    &__subtitle {
+        color: $peach;
+    }
+    &__description {
+        line-height: 1.25rem;
+    }
+    &__price {
+        text-align: end;
+        font-weight: 600;
+        color: $peach;
+    }
+    &__image {
+        height: 100%;
+    }
+}

@@ -16,7 +16,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             @include size(36.5rem, 22.25rem);
-            padding: 6rem;
+            padding: 4rem 6rem;
             @include flex (space-between, center, column);
             text-align: center;
             @include card;

@@ -33,6 +33,7 @@ const BookAppointmentPage = ({ artists, activeUser }) => {
 
     const handleSelectArtist = (e) => {
         e.preventDefault();
+        e.stopPropagation();
         const avatarOutline = document.querySelectorAll(".book-app__outline");
         avatarOutline.forEach(outline => {
             outline.classList.remove("selected");
@@ -204,7 +205,8 @@ const BookAppointmentPage = ({ artists, activeUser }) => {
                         )})?
                             <button 
                                 className="book-app__time-slot body-large not-available" 
-                                disabled value={time.value}
+                                disabled={true}
+                                value={time.value}
                                 key={time.id}>
                                     {time.display}
                             </button>

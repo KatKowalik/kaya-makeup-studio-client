@@ -3,8 +3,7 @@ import loginImg from "../../assets/images/Login image.png";
 import LoginCard from "../../Components/LoginCard/LoginCard";
 
 
-const LoginPage = ({ handleSubmit, handleChange, loggedUser }) => {
-    
+const LoginPage = ({ handleSubmit, handleChange, loggedUser, errorMessage }) => {
     return (
         <section className="login">
         <img src={loginImg} alt="woman's face with a brown-toned makeup" className="login__image"/>
@@ -12,6 +11,7 @@ const LoginPage = ({ handleSubmit, handleChange, loggedUser }) => {
                 handleSubmit={handleSubmit} 
                 handleChange={handleChange}
                 loggedUser={loggedUser}
+                errorMessage={errorMessage}
             />
         </section>
     )

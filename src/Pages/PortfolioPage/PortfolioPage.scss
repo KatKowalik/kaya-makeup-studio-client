@@ -1,0 +1,19 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+
+.portfolio {
+    padding: 1rem 14rem;
+    &__image-container {
+        @include flex(space-between);
+        padding-bottom: 1rem;
+    }
+    &__image {
+        border-radius: 5px;
+        box-shadow: $drop-shadow;
+        filter: grayscale(70%);
+        &:hover {
+            filter: none;
+        }
+    }
+}

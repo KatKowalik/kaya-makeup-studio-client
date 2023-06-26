@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/icons/logo-white-color.svg";
 
 
-const LoginCard = ({ handleSubmit, handleChange, loggedUser }) => {
+const LoginCard = ({ handleSubmit, handleChange, loggedUser, errorMessage }) => {
   
     return (
         <div className="login__card">
@@ -15,6 +15,9 @@ const LoginCard = ({ handleSubmit, handleChange, loggedUser }) => {
                         <span className="span"> Create an account.</span>
                     </Link>
                 </p>
+                <div className="login__error hidden">
+                    <p className="login__error-message error-span">{errorMessage}</p>
+                </div>
             </div>
             <form className="login__form" onSubmit={handleSubmit}>
                 <div className="login__field-container">

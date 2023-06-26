@@ -1,0 +1,58 @@
+@use "../../styles//partials/mixins" as *;
+@use "../../styles//partials/variables" as *;
+
+
+.team {
+    padding: 0 10rem;
+    &__title {
+        text-align: center;
+    }
+    &__cards-container {
+        @include flex (space-between);
+    }
+    &__card {
+        @include card;
+        @include flex (flex-end, flex-start, column);
+        height: 34rem;
+        overflow: hidden;
+        position: relative;
+    }
+    &__artist-img {
+        object-fit: cover;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &__overlay {
+        position: absolute;
+        z-index: 5;
+        @include size (100%, 100%);
+        top: 0;
+        left: 0;
+        background: linear-gradient(0.08deg, #4C4855 0.07%, rgba(59, 55, 66, 0) 50%);
+    }
+    &__copy-container {
+        position: relative;
+        z-index: 10;
+        align-self: flex-end;
+        padding: 2rem;
+    }
+    &__artist-name {
+        font-size: 2rem;
+        margin: 0;
+    }
+    &__services {
+        color: $peach;
+        line-height: 1.5rem;
+    }
+    &__link:link,
+    &__link:visited {
+        color: $white;
+        text-decoration: none;
+    }
+}
+
+:root {
+    --swiper-navigation-color: $peach;
+}

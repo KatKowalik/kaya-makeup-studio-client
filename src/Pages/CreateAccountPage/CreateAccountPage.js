@@ -4,13 +4,12 @@ import { createPortal } from 'react-dom';
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
-
-
+import { Link } from "react-router-dom";
+import image from "../../assets/images/confirm-img.png";
 
 const CreateAccountPage = () => {
     const navigate = useNavigate();
     const [showModal, setShowModal] = useState(false);
-    const [focused, setFocused] = useState(false);
     const [newUser, setNewUser] = useState({
         first_name: "",
         last_name: "",
@@ -19,6 +18,7 @@ const CreateAccountPage = () => {
         password: ""
     });
 
+    console.log(newUser)
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -45,106 +45,34 @@ const CreateAccountPage = () => {
         setShowModal(true)
     }
 
-    const handleFocused = (e) => {
-        setFocused(true);
-    }
-
     return (
         <section className="create-account">
-            <h1 className="create-account__title page-header">Create an account</h1>
             <form className="create-account__form" onSubmit={handleSubmit}>
+                <h1 className="create-account__title page-header">Create Account</h1>
                 <div className="create-account__credentials">
-                    <h4 className="create-account__subtitle subheader">Login credentials</h4>
-                    <div className="create-account__field-container">
-                        <label htmlFor="email" className="create-account__label label">E-mail</label>
-                        <input 
-                            name="email" 
-                            type="email" 
-                            id="email" 
-                            className="form-field"
-                            value={newUser.email}
-                            required={true}
-                            onChange={handleChange}
-                            onBlur={handleFocused}
-                            focused={focused.toString()}
-                        />
-                        <span className="error-span">Required field</span>
-                    </div>
-                    <div className="create-account__field-container">
-                        <label htmlFor="confirmEmail" className="create-account__label label">Confirm e-mail</label>
-                        <input 
-                            name="confirmEmail" 
-                            type="email" 
-                            id="confirmEmail" 
-                            className="form-field"
-                            pattern={newUser.email}
-                            required={true}
-                            onBlur={handleFocused}
-                            focused={focused.toString()}
-                        />
-                        <span className="error-span">Emails don't match</span>
-                    </div>
-                    <div className="create-account__field-container">
-                        <label htmlFor="password" className="create-account__label label">Password</label>
-                        <input 
-                            name="password" 
-                            type="password" 
-                            id="password" 
-                            className="form-field"
-                            value={newUser.password}
-                            onChange={handleChange}
-                            required={true}
-                            onBlur={handleFocused}
-                            focused={focused.toString()}
-                        />
-                        <span className="error-span">Required field</span>
-                    </div>
-                    <div className="create-account__field-container">
-                        <label htmlFor="confirmPassword" className="create-account__label label">Confirm password</label>
-                        <input 
-                            name="confirmPassword" 
-                            type="password" 
-                            id="confirmPassword" 
-                            className="form-field"
-                            pattern={newUser.password}
-                            required={true}
-                            onBlur={handleFocused}
-                            focused={focused.toString()}
-                        />
-                        <span className="error-span">Passwords don't match</span>
-                    </div>
-                </div>
-                <div className="create-account__personal-info">
-                    <h4 className="create-account__subtitle subheader">Personal info</h4>
-                    <div className="create-account__field-container">
-                        <label htmlFor="firstName" className="create-account__label label">First name</label>
-                        <input 
-                            name="first_name" 
-                            type="text" 
-                            id="first_name" 
-                            className="form-field"
-                            value={newUser.first_name}
-                            onChange={handleChange}
-                            required={true}
-                            onBlur={handleFocused}
-                            focused={focused.toString()}
-                        />
-                        <span className="error-span">Required field</span>
-                    </div>
-                    <div className="create-account__field-container">
-                        <label htmlFor="lastName" className="create-account__label label">Last name</label>
-                        <input 
-                            name="last_name" 
-                            type="text" 
-                            id="last_name" 
-                            className="form-field"
-                            value={newUser.last_name}
-                            onChange={handleChange}
-                            required={true}
-                            onBlur={handleFocused}
-                            focused={focused.toString()}
-                        />
-                        <span className="error-span">Required field</span>
+                    <div className="create-account__name-holder">
+                        <div className="create-account__field-container">
+                            <label htmlFor="firstName" className="create-account__label label">First name</label>
+                            <input 
+                                name="first_name" 
+                                type="text" 
+                                id="first_name" 
+                                className="form-field create-account__name"
+                                value={newUser.first_name}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="create-account__field-container">
+                            <label htmlFor="lastName" className="create-account__label label">Last name</label>
+                            <input 
+                                name="last_name" 
+                                type="text" 
+                                id="last_name" 
+                                className="form-field create-account__name"
+                                value={newUser.last_name}
+                                onChange={handleChange}
+                            />
+                        </div>
                     </div>
                     <div className="create-account__field-container">
                         <label htmlFor="phoneNumber" className="create-account__label label">Phone number</label>
@@ -155,18 +83,49 @@ const CreateAccountPage = () => {
                             className="form-field"
                             value={newUser.phone_number}
                             onChange={handleChange}
-                            required={true}
-                            onBlur={handleFocused}
-                            focused={focused.toString()}
                         />
-                        <span className="error-span">Required field</span>
+                    </div>
+                    <div className="create-account__field-container">
+                        <label htmlFor="email" className="create-account__label label">E-mail</label>
+                        <input 
+                            name="email" 
+                            type="email" 
+                            id="email" 
+                            className="form-field"
+                            value={newUser.email}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="create-account__field-container">
+                        <label htmlFor="password" className="create-account__label label">Password</label>
+                        <input 
+                            name="password" 
+                            type="password" 
+                            id="password" 
+                            className="form-field"
+                            value={newUser.password}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="create-account__field-container">
+                        <label htmlFor="confirmPassword" className="create-account__label label">Confirm password</label>
+                        <input 
+                            name="confirmPassword" 
+                            type="password" 
+                            id="confirmPassword" 
+                            className="form-field"
+                        />
                     </div>
                     <div className="create-account__buttons-container">
                         <button className="create-account__button secondary-button label" onClick={handleBack}>Back</button>
                         <button className="create-account__button primary-button label">Confirm</button>
-                    </div>  
+                    </div>
+                    <Link to="/login" className="create-account__login-span">
+                        <p className="body-small">Already have an account? <span className="span"> Log in.</span></p>
+                    </Link>
                 </div>
             </form>
+            <img src={image} alt="woman in green sweater wearing brown-toned makep" className="create-account__image"/>
             {showModal && createPortal(
                 <AccountCreatedModal/>,
                 document.body
