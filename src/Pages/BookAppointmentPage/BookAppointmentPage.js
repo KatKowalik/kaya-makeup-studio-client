@@ -24,9 +24,6 @@ const BookAppointmentPage = ({ artists, activeUser }) => {
         artist_id: +selectedArtist,
     }
 
-    console.log(activeUser, newAppointment);
-
-
     const openModal = (e) => {
         setShowModal(true)
     }

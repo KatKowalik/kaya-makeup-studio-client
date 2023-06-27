@@ -11,7 +11,6 @@ const ServicesPage = () => {
             try {
             
             const servicesData = await axios.get("http://localhost:8080/services");
-            console.log(servicesData.data)
             setServices(servicesData.data);
             
             } catch (error) {

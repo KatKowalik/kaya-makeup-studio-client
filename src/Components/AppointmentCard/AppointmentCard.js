@@ -23,8 +23,7 @@ const AppointmentCard = ({ bookedAppointments }) => {
         setShowModal(true);
         const appointmentIndex = bookedAppointments.findIndex(appointment => appointment.appointment_id == appointmentId);
         const activeAppointment = bookedAppointments[appointmentIndex].appointment_id
-        setAppToBeDel(activeAppointment);
-        console.log(activeAppointment);   
+        setAppToBeDel(activeAppointment);   
     }
    
     const closeModal = (e) => {

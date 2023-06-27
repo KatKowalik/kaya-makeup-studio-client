@@ -21,7 +21,6 @@ const UserDashboardPage = () => {
         const getActiveUser = async () => {
             try {
                 const userData = await axios.get(`http://localhost:8080/users/${id}`);
-                console.log(userData)
                 setDisplayedUser(userData.data)
             } catch (error) {
                 console.log(error)

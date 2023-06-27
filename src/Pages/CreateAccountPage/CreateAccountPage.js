@@ -24,7 +24,6 @@ const CreateAccountPage = () => {
 
         axios.post("http://localhost:8080/users", newUser)
         .then((response) => {
-            console.log("New user was created");
             openModal();
         })
         .catch((error) => {

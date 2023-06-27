@@ -44,9 +44,6 @@
         @include flex (flex-start, flex-start, column);
         gap: 0.5rem;
     }
-    &__label {
-        padding-left: 0.75rem;
-    }
     &__button-container {
         @include flex (space-between);
         gap: 1rem;

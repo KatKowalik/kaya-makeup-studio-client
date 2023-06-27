@@ -7,14 +7,10 @@ const CancelAppointmentModal = ({appToBeDel, closeModal}) => {
     const handleDelete = (e) => {
         e.preventDefault();
         axios.delete(`http://localhost:8080/appointments/${appToBeDel}`)
-            .then(response => {
-                console.log(`Deleted appointment with ID ${appToBeDel}`);
-            })
             .catch(error => {
                 console.error(error);
             });
         closeModal();
-        // window.location.reload();
     }
 
    

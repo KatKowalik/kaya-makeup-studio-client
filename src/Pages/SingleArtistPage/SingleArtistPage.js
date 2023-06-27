@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const SingleArtistPage = ({artists}) => {
     const { id } = useParams();
-    console.log(artists)
     const artistIndex = artists.findIndex(artist => artist.artist_id == id);
     const artist = artists[artistIndex];
 
