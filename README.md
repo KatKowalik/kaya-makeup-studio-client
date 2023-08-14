@@ -4,7 +4,7 @@ Kaya Makeup Studio is a website with an appointment booking feature created for 
 
 
 <div align="center"> 
-  <img src="./assets/images/Screens%20-presentation.png" alt="screenshot" />
+  <img src="./src/assets/images/Screens%20-presentation.png" alt="screenshot" />
 </div>
 
 This README file includes instructions to rum both repositories:
